@@ -1,5 +1,1 @@
-NEED TO IMPLEMENT:
-
--- Implement Search
--- Implement Click on tag
--- Implement View other profiles
+LIVE DEMO: https://prompt-sharing-nextjs-project-jq9lhix4f.vercel.app/
