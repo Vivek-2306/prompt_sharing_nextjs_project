@@ -46,6 +46,12 @@ const Feed = () => {
     );
   };
 
+  const handleTagClick = (tagName) => {
+    setSearchText(tagName);
+    const searchResult = filterPrompts(tagName);
+    setSearchedResults(searchResult);
+  };
+
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await fetch("/api/prompt");
@@ -69,9 +75,12 @@ const Feed = () => {
         />
       </form>
       {searchText ? (
-        <PromptCardList data={searchedResults} handleTagClick={() => {}} />
+        <PromptCardList
+          data={searchedResults}
+          handleTagClick={handleTagClick}
+        />
       ) : (
-        <PromptCardList data={posts} handleTagClick={() => {}} />
+        <PromptCardList data={posts} handleTagClick={handleTagClick} />
       )}
     </section>
   );
